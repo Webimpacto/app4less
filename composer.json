@@ -1,0 +1,17 @@
+{
+    "name": "webimpacto/app4less",
+    "description": "PHP App4Less API Push Notification",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Pablo Martin",
+            "email": "pmartin@webimpacto.es"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Webimpacto\\App4Less": "src/"
+        }
+    },
+    "require": {}
+}
