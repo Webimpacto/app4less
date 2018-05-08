@@ -54,19 +54,6 @@ class Client
     public static function isApp4Less()
     {
         $isApp4Less = false;
-
-        if (!function_exists('getallheaders')) {
-            function getallheaders()
-            {
-                $headers = '';
-                foreach ($_SERVER as $name => $value) {
-                    if (substr($name, 0, 5) == 'HTTP_') {
-                        $headers[str_replace(' ', '-', ucwords(strtolower(str_replace('_', ' ', substr($name, 5)))))] = $value;
-                    }
-                }
-                return $headers;
-            }
-        }
         $headers = getallheaders();
 
 
@@ -86,7 +73,7 @@ class Client
 
             $_COOKIE['isApp4Less'] = true;
             $isApp4Less = true;
-        } else if ($_COOKIE['isApp4Less'] == true) {
+        } else if (isset($_COOKIE['isApp4Less']) && $_COOKIE['isApp4Less'] == true) {
             $isApp4Less = true;
         }
 

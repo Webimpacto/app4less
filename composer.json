@@ -14,5 +14,7 @@
             "Webimpacto\\App4Less": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "ralouphie/getallheaders": "^2.0"
+    }
 }
