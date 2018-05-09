@@ -62,7 +62,7 @@ class Client
                 || strpos($headers['X-Requested-With'], 'app4less') == true)
         ) {
 
-            $_COOKIE['isApp4Less'] = true;
+            setcookie('isApp4Less', true, time() + (86400), "/");
             $isApp4Less = true;
 
         } else if (isset($headers['Referer']) &&
@@ -71,7 +71,7 @@ class Client
             )
         ) {
 
-            $_COOKIE['isApp4Less'] = true;
+            setcookie('isApp4Less', true, time() + (86400), "/");
             $isApp4Less = true;
         } else if (isset($_COOKIE['isApp4Less']) && $_COOKIE['isApp4Less'] == true) {
             $isApp4Less = true;
@@ -84,7 +84,7 @@ class Client
     {
         if (self::isApp4Less()) {
             if (isset($_GET['token_app'])) {
-                $_COOKIE['token_app'] = $_GET['token_app'];
+                setcookie('token_app', $_GET['token_app'], time() + (86400), "/");
                 return $_GET['token_app'];
             }
 
@@ -101,7 +101,7 @@ class Client
     {
         if (self::isApp4Less()) {
             if (isset($_GET['uuid'])) {
-                $_COOKIE['uuid_app'] = $_GET['uuid'];
+                setcookie('uuid_app', $_GET['token_app'], time() + (86400), "/");
                 return $_GET['uuid'];
             }
 
