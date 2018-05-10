@@ -56,7 +56,6 @@ class Client
         $isApp4Less = false;
         $headers = getallheaders();
 
-
         if (isset($headers['X-Requested-With']) &&
             (strpos($headers['X-Requested-With'], 'reskyt') == true
                 || strpos($headers['X-Requested-With'], 'app4less') == true)
@@ -82,6 +81,7 @@ class Client
 
     public static function getAPPToken()
     {
+
         if (self::isApp4Less()) {
             if (isset($_GET['token_app'])) {
                 setcookie('token_app', $_GET['token_app'], time() + (86400), "/");
